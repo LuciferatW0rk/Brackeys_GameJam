@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://xyu2ksk2x66e"]
+
+[ext_resource type="Material" uid="uid://vxtivghk28ix" path="res://Assets/Trunk.tres" id="1_xmge8"]
+[ext_resource type="Material" uid="uid://brvut3cjd25fn" path="res://Assets/LeafMaterial.tres" id="2_oegd0"]
+
+[node name="Tree" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70457, 0)
+
+[node name="Trunk" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 2.5, 0, 0, 0, 0.6, -0.00979048, 0.763662, 0.0116165)
+material_override = ExtResource("1_xmge8")
+use_collision = true
+
+[node name="Leafs" type="Node3D" parent="."]
+transform = Transform3D(1.05249, 0, 0, 0, 1.05249, 0, 0, 0, 1.14961, 0, 2.02147, 0.112165)
+
+[node name="Leaf" type="CSGSphere3D" parent="Leafs"]
+transform = Transform3D(2.4, 0, -0.00385369, 0, 2.4, 0, 0.00385369, 0, 2.4, 0.494053, 1.03292, -0.723729)
+material_override = ExtResource("2_oegd0")
+use_collision = true
+radius = 0.519085
+
+[node name="Leaf3" type="CSGSphere3D" parent="Leafs"]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -0.944415, 1.08017, 0.295956)
+material_override = ExtResource("2_oegd0")
+use_collision = true
+
+[node name="Leaf4" type="CSGSphere3D" parent="Leafs"]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0.40647, 1.33376, 0.357734)
+material_override = ExtResource("2_oegd0")
+use_collision = true
+
+[node name="Leaf2" type="CSGSphere3D" parent="Leafs"]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -0.408508, 2.01865, -0.142649)
+material_override = ExtResource("2_oegd0")
+use_collision = true
+radius = 0.506088
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.0335692, 0.0964683, -0.0367402, -0.0292894, 0.676428, -0.0223213, 0.0226988, 0.730163, 0.0255327, 0, 1.14363, 0.598016)
+material_override = ExtResource("1_xmge8")
+use_collision = true

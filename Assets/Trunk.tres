@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://vxtivghk28ix"]
+
+[ext_resource type="Texture2D" uid="uid://cdwl4jaytgvik" path="res://Assets/JDSherbert - PBR Pack [FREE]/PBR Materials/Natural/Bark/Material - Shiny Bark_diffuseOriginal.png" id="1_o066m"]
+
+[resource]
+albedo_color = Color(0.351023, 0.220442, 0.200765, 1)
+albedo_texture = ExtResource("1_o066m")

@@ -1,0 +1,28 @@
+Materials Included:
+ - Bark
+ - Beehive
+ - Brick Wall
+ - Cardboard
+ - Dead Grass
+ - Desert Wastes (Cracked)
+ - Dirt (Woodland)
+ - Dragon Scale
+ - Flesh 1
+ - Flesh 2
+ - Frosted Snow
+ - Golden Filligree
+ - Grass (Jungle)
+ - Grass (Overgrown)
+ - Grass (Woodland)
+ - Ice
+ - Lava (Crust)
+ - Mud (Wet)
+ - Rock
+ - Steel Plate (Bolted)
+ - Stone Wall
+ - Wasteland Mud (Wet)
+
+*Note: some materials may not have certain maps - 
+this is to be expected as some of the maps contribute nothing to the material. 
+This is to save space in the pack.
+

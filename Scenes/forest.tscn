@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf7ygxdrgwmht"]
+
+[ext_resource type="Texture2D" uid="uid://bxx2psf6aj4bi" path="res://Assets/JDSherbert - PBR Pack [FREE]/PBR Materials/Natural/Grass (Jungle)/Material - Jungle Grass_diffuseOriginal.png" id="1_ub03k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4x34"]
+albedo_color = Color(3.27289e-06, 0.398911, 0.250469, 1)
+albedo_texture = ExtResource("1_ub03k")
+uv1_triplanar = true
+
+[node name="Forest" type="Node3D"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+material_override = SubResource("StandardMaterial3D_p4x34")
+use_collision = true
+size = Vector3(500, 0.2, 500)

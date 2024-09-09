@@ -1,6 +1,6 @@
 extends Node
 
-@onready var anim_player = $"../Head/PlayerCharacterWithoutWeapon/AnimationPlayer"
+@onready var anim_player = $"../Head/Camera3D/PlayerCharacterWithoutWeapon/AnimationPlayer"
 
 func _ready():
 	# Ensure the AnimationPlayer node is correctly referenced

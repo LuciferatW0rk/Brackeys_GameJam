@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2y1voevupsh1"]
+[gd_scene load_steps=9 format=3 uid="uid://b2y1voevupsh1"]
 
-[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_2nd3d"]
+[ext_resource type="PackedScene" uid="uid://bjfjgha7hpy5" path="res://Player.tscn" id="1_dphnj"]
 [ext_resource type="PackedScene" uid="uid://cwpca6bdlmeop" path="res://Assets/house.tscn" id="2_8tld7"]
 [ext_resource type="PackedScene" uid="uid://cf7ygxdrgwmht" path="res://Scenes/forest.tscn" id="3_262go"]
 [ext_resource type="PackedScene" uid="uid://xyu2ksk2x66e" path="res://Assets/tree.tscn" id="4_pdt5l"]
@@ -20,10 +20,6 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81skk"]
 albedo_color = Color(0, 0.390323, 0.90562, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ukn62"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8vg0"]
 
 [node name="World" type="Node3D"]
 
@@ -59,22 +55,8 @@ transform = Transform3D(3.6133, 0, 0, 0, 2.53769, 0, 0, 0, 2.42942, 0, 0.534843,
 material_override = SubResource("StandardMaterial3D_81skk")
 use_collision = true
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.187101, 0)
-script = ExtResource("1_2nd3d")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07788, 0)
-mesh = SubResource("CapsuleMesh_ukn62")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(0.999487, 0, 0, 0, 0.999487, 0, 0, 0, 0.999487, 0, 1.06968, 0)
-shape = SubResource("CapsuleShape3D_x8vg0")
-
-[node name="Head" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.0519937, 1.6422, 0)
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_dphnj")]
+transform = Transform3D(0.00933736, 0, -0.999956, 0, 1, 0, 0.999956, 0, 0.00933736, 7.35124, 0.187101, -4.17796)
 
 [node name="House" parent="." instance=ExtResource("2_8tld7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15427, 0.0249987, -1.4753)

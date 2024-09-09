@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2y1voevupsh1"]
+[gd_scene load_steps=8 format=3 uid="uid://b2y1voevupsh1"]
 
 [ext_resource type="PackedScene" uid="uid://bjfjgha7hpy5" path="res://Player.tscn" id="1_dphnj"]
 [ext_resource type="PackedScene" uid="uid://cwpca6bdlmeop" path="res://Assets/house.tscn" id="2_8tld7"]
@@ -18,51 +18,23 @@ sky = SubResource("Sky_64bcn")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81skk"]
-albedo_color = Color(0, 0.390323, 0.90562, 1)
-
 [node name="World" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(0.839734, 0.542132, -0.030642, 0.211769, -0.378937, -0.900867, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_shi8o")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0498142, 1.43995, -10.0978)
-use_collision = true
-size = Vector3(0.2, 3, 20)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.84883, 1.43995, 0)
-use_collision = true
-size = Vector3(0.2, 3, 20)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.063, 1.44057, 10.113)
-use_collision = true
-size = Vector3(0.2, 3, 20)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.94218, 1.43995, 0)
-use_collision = true
-size = Vector3(0.2, 3, 20)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(3.6133, 0, 0, 0, 2.53769, 0, 0, 0, 2.42942, 0, 0.534843, 5.268)
-material_override = SubResource("StandardMaterial3D_81skk")
-use_collision = true
-
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_dphnj")]
 transform = Transform3D(0.00933736, 0, -0.999956, 0, 1, 0, 0.999956, 0, 0.00933736, 7.35124, 0.187101, -4.17796)
-
-[node name="House" parent="." instance=ExtResource("2_8tld7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15427, 0.0249987, -1.4753)
 
 [node name="Forest" parent="." instance=ExtResource("3_262go")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -40)
 
 [node name="Tree" parent="." instance=ExtResource("4_pdt5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71397, 0.0999994, 7.07658)
+
+[node name="House" parent="." instance=ExtResource("2_8tld7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.60151)

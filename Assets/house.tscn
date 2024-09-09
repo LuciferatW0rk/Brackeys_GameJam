@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwpca6bdlmeop"]
+[gd_scene load_steps=7 format=3 uid="uid://cwpca6bdlmeop"]
 
 [ext_resource type="Material" uid="uid://ck47t7ravy6dc" path="res://Assets/Gold.tres" id="1_7t1j3"]
 [ext_resource type="Material" uid="uid://csgjxhsfx301n" path="res://Assets/Glass.tres" id="1_wr620"]
@@ -8,6 +8,16 @@ albedo_color = Color(0.2484, 0.2484, 0.2484, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cq5di"]
 albedo_color = Color(0.405554, 0.263134, 0.214005, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm5ql"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 6.57
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_si115"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 12.5
 
 [node name="House" type="Node3D"]
 
@@ -69,7 +79,7 @@ use_collision = true
 transform = Transform3D(5.95496, 0, 0, 0, 1.27359, 0, 0, 0, 1.00007, 7.87358, 2.268, -1.02658)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Wall7"]
-transform = Transform3D(-1.15711e-07, -0.696462, 0, 2.64715, -3.04433e-08, 0, -1.69406e-21, -2.84436e-14, 0.137408, 0.0116847, -0.424779, -0.305097)
+transform = Transform3D(-1.15711e-07, -0.696462, 0, 2.64715, -3.04433e-08, 0, -1.69406e-21, -2.84436e-14, 0.137408, 0.0116848, -0.436289, -0.305097)
 use_collision = true
 
 [node name="Wall With Door" type="Node3D" parent="."]
@@ -90,7 +100,7 @@ transform = Transform3D(-1.14861e-07, -0.695925, 0, 2.62772, -3.04199e-08, 0, 0,
 use_collision = true
 
 [node name="Door" type="Node3D" parent="Wall With Door"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.624741, 0, 0)
+transform = Transform3D(-0.139173, 0, 0.990268, 0, 1, 0, -0.990268, 0, -0.139173, -0.624741, 0, 0)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Wall With Door/Door"]
 transform = Transform3D(-1.14861e-07, -1.24118, 0, 2.62772, -5.42537e-08, 0, 0, 0, 0.109277, 0.629106, -0.688432, 0)
@@ -221,4 +231,55 @@ use_collision = true
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Wall With Window2/Frame"]
 transform = Transform3D(-1.14861e-07, -0.695925, 0, 2.62772, -3.04199e-08, 0, 0, 0, 0.137408, -0.972793, -0.688432, -4.76837e-07)
+use_collision = true
+
+[node name="Ceiling" type="Node3D" parent="."]
+
+[node name="Floor3" type="CSGBox3D" parent="Ceiling"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 3.37315, 0)
+material_override = SubResource("StandardMaterial3D_1dppm")
+use_collision = true
+size = Vector3(6, 0.1, 6)
+
+[node name="Floor4" type="CSGBox3D" parent="Ceiling"]
+transform = Transform3D(0.774933, 0, 0, 0, 0.396053, 0, 0, 0, 0.792107, 7.68451, 3.4007, -3.62392)
+material_override = SubResource("StandardMaterial3D_1dppm")
+use_collision = true
+size = Vector3(6, 0.1, 6)
+
+[node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39639, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Lights"]
+transform = Transform3D(0.234238, 0, 0, 0, 0.00949043, 0, 0, 0, 0.271125, 0, 1.90163, 0)
+material_override = SubResource("StandardMaterial3D_vm5ql")
+radius = 0.45396
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/CSGCylinder3D"]
+transform = Transform3D(4.23794, 0, 0.515398, 0, 131.33, 0, -0.445276, 0, 3.66136, 0, -15.8748, 0)
+light_energy = 3.263
+light_indirect_energy = 1.162
+omni_range = 3.942
+omni_attenuation = 0.732044
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Lights"]
+transform = Transform3D(0.234238, 0, 0, 0, 0.00949043, 0, 0, 0, 0.271125, 0, 1.90163, 2.65636)
+material_override = SubResource("StandardMaterial3D_vm5ql")
+radius = 0.45396
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/CSGCylinder3D2"]
+transform = Transform3D(4.23794, 0, 0.515398, 0, 131.33, 0, -0.445276, 0, 3.66136, 0, -15.8748, 0)
+light_energy = 3.263
+light_indirect_energy = 1.162
+omni_range = 3.942
+omni_attenuation = 0.732044
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Lights"]
+transform = Transform3D(-4.37806e-09, -1.28751, 0, 0.100158, -5.62787e-08, 0, 0, 0, 0.100158, -0.0251546, 1.57357, -5.83881)
+material_override = SubResource("StandardMaterial3D_si115")
+use_collision = true
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Lights"]
+transform = Transform3D(1.91371e-16, 5.62787e-08, 0.100158, 0.100158, -5.62787e-08, 0, 4.37806e-09, 1.28751, -4.37806e-09, -5.89922, 1.57357, 1.02439)
+material_override = SubResource("StandardMaterial3D_si115")
 use_collision = true

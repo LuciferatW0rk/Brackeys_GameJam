@@ -1,2 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
+Assets/Zombie/weak_zombie.glb
+Assets/Zombie/weak_zombie_Ch10_1002_Glossiness.png.import
+Assets/Zombie/weak_zombie_Ch10_1002_Normal.png
+Assets/Zombie/weak_zombie_Ch10_1002_Normal.png.import
+Assets/Zombie/weak_zombie_Ch10_1002_Specular.png
+Assets/Zombie/weak_zombie_Ch10_1002_Specular.png.import
+Assets/Zombie/zombie_anim.res
+Scenes/weak_zombie.tscn

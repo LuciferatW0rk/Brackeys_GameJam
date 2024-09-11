@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjfjgha7hpy5"]
+[gd_scene load_steps=6 format=3 uid="uid://bjfjgha7hpy5"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_h0fgd"]
+[ext_resource type="PackedScene" uid="uid://blf0eknkwxf4i" path="res://Glock.tscn" id="3_trpws"]
 [ext_resource type="Script" path="res://RayCast3D.gd" id="19_3dnoa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_24rwl"]
@@ -29,3 +30,6 @@ near = 0.026
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -6.46062e-08, -1, 0, 1.47802, -4.37114e-08, 0, 0, 0.189009)
 script = ExtResource("19_3dnoa")
+
+[node name="Glock" parent="Head/Camera3D" instance=ExtResource("3_trpws")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0.202731, -0.192928, -0.578951)

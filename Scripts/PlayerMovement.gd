@@ -13,8 +13,13 @@ var t_bob = 0.0
 
 var gravity = 9.8
 
+var bullet_glock = load("res://bullet_glock.tscn")
+var instance 
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var glock_anim = $Head/Camera3D/Glock/AnimationPlayer
+@onready var glock_barrel = $Head/Camera3D/Glock/RayCast3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -60,6 +65,15 @@ func _physics_process(delta):
 	# Head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob) * 0.5
+	
+	#shooting
+	if Input.is_action_just_pressed("shoot"):
+		if !glock_anim.is_playing():
+			glock_anim.play("shoot")
+			instance = bullet_glock.instantiate()
+			instance.position = glock_barrel.global_position
+			instance.transform.basis = glock_barrel.global_transform.basis
+			get_parent().add_child(instance)
 	
 	move_and_slide()
 	

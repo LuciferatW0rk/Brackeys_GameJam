@@ -15,7 +15,6 @@ var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-@onready var animation_controller = $"Animation Controller"  # Reference the Animation Controller node
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -38,15 +37,6 @@ func _physics_process(delta):
 	else:
 		speed = WALK_SPEED
 
-	# Movement and animation logic...
-	if Input.is_action_pressed("forward") and is_on_floor():
-		if Input.is_action_pressed("shift") and is_on_floor():
-			animation_controller.play_animation("run")
-		else:
-			animation_controller.play_animation("walk")
-		
-	else:
-		animation_controller.play_animation("idle")
 
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -72,7 +62,8 @@ func _physics_process(delta):
 	camera.transform.origin = _headbob(t_bob) * 0.5
 	
 	move_and_slide()
-
+	
+	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP

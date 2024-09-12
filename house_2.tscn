@@ -1,0 +1,146 @@
+[gd_scene load_steps=13 format=3 uid="uid://csviwghmj3uem"]
+
+[ext_resource type="Material" uid="uid://b1lmqeybaspxp" path="res://lawn.tres" id="1_p0g4j"]
+[ext_resource type="Material" uid="uid://ck47t7ravy6dc" path="res://Assets/Gold.tres" id="2_vot0g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hua48"]
+albedo_color = Color(0.219608, 0.698039, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hg2hj"]
+albedo_color = Color(0.328651, 0.192057, 0.107696, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_ckj2m"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w8bur"]
+data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_26y2x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3p3ep"]
+albedo_color = Color(0.405554, 0.263134, 0.214005, 1)
+
+[sub_resource type="Animation" id="Animation_gl886"]
+resource_name = "Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qjmex"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_01dko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kcv3e"]
+_data = {
+"Close": SubResource("Animation_gl886"),
+"Open": SubResource("Animation_qjmex"),
+"RESET": SubResource("Animation_01dko")
+}
+
+[node name="House_2" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 4.99427, 0)
+material_override = SubResource("StandardMaterial3D_hua48")
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 0.1, 0, 0, 0, 12, 0, 0, 0)
+material_override = ExtResource("1_p0g4j")
+use_collision = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 5, 0, 0, 0, 12, 0, 11.7269, 0)
+material_override = SubResource("StandardMaterial3D_hg2hj")
+mesh = SubResource("PrismMesh_ckj2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
+shape = SubResource("ConcavePolygonShape3D_w8bur")
+
+[node name="Wall With Door" type="Node3D" parent="."]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -0.0524459, 3.97999, -5.05791)
+
+[node name="Frame" type="Node3D" parent="Wall With Door"]
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Wall With Door/Frame"]
+transform = Transform3D(2.63497, 0, 0, 0, 0.738012, 0, 0, 0, 0.137787, 0, 0.988103, 0)
+use_collision = true
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Wall With Door/Frame"]
+transform = Transform3D(-1.14861e-07, -0.695925, 0, 2.62772, -3.04199e-08, 0, 0, 0, 0.137408, 0.967463, -0.688432, 0)
+use_collision = true
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Wall With Door/Frame"]
+transform = Transform3D(-1.14861e-07, -0.695925, 0, 2.62772, -3.04199e-08, 0, 0, 0, 0.137408, -0.972793, -0.688432, 0)
+use_collision = true
+
+[node name="Door" type="Node3D" parent="Wall With Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.624741, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall With Door/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.602397, -0.518095, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall With Door/Door/StaticBody3D"]
+transform = Transform3D(-1.14874e-07, -1.241, 0, 2.628, -5.42458e-08, 0, 0, -3.55271e-15, 0.109, 0.012, 0, 0)
+shape = SubResource("BoxShape3D_26y2x")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Wall With Door/Door/StaticBody3D"]
+transform = Transform3D(-1.14861e-07, -1.24118, 0, 2.62772, -5.42537e-08, 0, 0, 0, 0.109277, 0.0267091, -0.170337, 0)
+material_override = SubResource("StandardMaterial3D_3p3ep")
+use_collision = true
+
+[node name="Door Knob" type="CSGCylinder3D" parent="Wall With Door/Door/StaticBody3D"]
+transform = Transform3D(0.0717228, 0, 0, 0, -6.55465e-10, -0.0622281, 0, 0.0149953, -2.72008e-09, 0.547563, -0.0212231, 0.0766411)
+material_override = ExtResource("2_vot0g")
+use_collision = true
+
+[node name="Door Knob2" type="CSGCylinder3D" parent="Wall With Door/Door/StaticBody3D/Door Knob"]
+transform = Transform3D(1.66062, 0, 0, 0, 0.999858, 2.27374e-13, 0, 5.32907e-15, 1.70231, 0, 1.22021, 0)
+
+[node name="Door Knob2" type="CSGCylinder3D" parent="Wall With Door/Door/StaticBody3D"]
+transform = Transform3D(-0.0717228, 1.31093e-09, 0, 2.74079e-16, 6.55465e-10, -0.0622281, -6.2702e-09, -0.0149953, -2.72008e-09, 0.547563, -0.0212231, -0.068264)
+material_override = ExtResource("2_vot0g")
+use_collision = true
+
+[node name="Door Knob2" type="CSGCylinder3D" parent="Wall With Door/Door/StaticBody3D/Door Knob2"]
+transform = Transform3D(1.66062, 0, 0, 0, 0.999858, 2.27374e-13, 0, 5.32907e-15, 1.70231, 0, 1.22021, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Wall With Door/Door/StaticBody3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_kcv3e")
+}

@@ -5,6 +5,10 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnncm"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_gndm5"]
+length = 0.1
+step = 0.01
+
 [sub_resource type="Animation" id="Animation_i84gi"]
 resource_name = "shoot"
 length = 0.1
@@ -21,10 +25,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0.203, -0.193, -0.579), Vector3(0.203, -0.193, -0.479), Vector3(0.203, -0.193, -0.579)]
 }
-
-[sub_resource type="Animation" id="Animation_gndm5"]
-length = 0.1
-step = 0.01
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pg5xk"]
 _data = {

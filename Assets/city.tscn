@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://by045a3fhno5y"]
+[gd_scene load_steps=7 format=3 uid="uid://by045a3fhno5y"]
 
 [ext_resource type="PackedScene" uid="uid://csviwghmj3uem" path="res://house_2.tscn" id="1_ubxa0"]
 [ext_resource type="PackedScene" uid="uid://c8oqleutoybut" path="res://street_light.tscn" id="2_sjw1h"]
@@ -9,6 +9,13 @@ albedo_color = Color(0.544974, 0.544974, 0.544974, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_n2vli"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tvi7o"]
+
+[sub_resource type="Curve3D" id="Curve3D_3yyee"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -30.6276, 0, -40.1321, 0, 0, 0, 0, 0, 0, -30.2555, 0, -21.5254, 0, 0, 0, 0, 0, 0, -30.4415, 0, -10.5475, 0, 0, 0, 0, 0, 0, -3.834, 0, -11.2918, 0, 0, 0, 0, 0, 0, -3.27582, 0, 7.50096, 0, 0, 0, 0, 0, 0, -29.1391, 0, 7.87309, 0, 0, 0, 0, 0, 0, -29.3251, 0, 28.7125, 0, 0, 0, 0, 0, 0, -2.90368, 0, 28.1544, 0, 0, 0, 0, 0, 0, 26.3088, 0, 29.6429, 0, 0, 0, 0, 0, 0, 25.5645, 0, 6.57062, 0, 0, 0, 0, 0, 0, 26.6809, 0, -19.1066, 0, 0, 0, 0, 0, 0, 26.3088, 0, -33.9919, 0, 0, 0, 0, 0, 0, -0.112669, 0, -32.6894, 0, 0, 0, 0, 0, 0, -0.670881, 0, -44.0395, 0, 0, 0, 0, 0, 0, -30.9997, 0, -45.528, 0, 0, 0, 0, 0, 0, -30.6276, 0, -40.1321),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 16
 
 [node name="City" type="Node3D"]
 
@@ -57,17 +64,11 @@ transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 
 [node name="House_2" parent="Houses" instance=ExtResource("1_ubxa0")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -39.0826, 0.220147, 0)
 
-[node name="House_3" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -26.6278, 0.220147, 0)
-
 [node name="House_4" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -16.1045, 0.220147, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -19.1155, 0.220147, 0)
 
 [node name="House_5" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -16.1045, 0.220147, -20.7441)
-
-[node name="House_6" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -27.0118, 0.220147, -20.7441)
+transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -19.1155, 0.220147, -20.7441)
 
 [node name="House_7" parent="Houses" instance=ExtResource("1_ubxa0")]
 transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -40.1172, 0.220147, -20.7441)
@@ -76,16 +77,13 @@ transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, 
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -39.0826, 0.220147, 38.8527)
 
 [node name="House_9" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -26.6278, 0.220147, 38.8527)
+transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, -39.0826, 0.220147, -39.7222)
 
 [node name="House_10" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -16.1045, 0.220147, 38.8527)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -19.1155, 0.220147, 38.8527)
 
 [node name="House_11" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -16.1045, 0.220147, 18.1086)
-
-[node name="House_12" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -27.0118, 0.220147, 18.1086)
+transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -19.1155, 0.220147, 18.1086)
 
 [node name="House_13" parent="Houses" instance=ExtResource("1_ubxa0")]
 transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -40.1172, 0.220147, 18.1086)
@@ -94,40 +92,41 @@ transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, 
 transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, -41.83)
 
 [node name="House_15" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, -29.0231)
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, -25.448)
 
 [node name="House_16" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, -16.4055)
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, -9.74884)
 
 [node name="House_17" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, -2.13363)
-
-[node name="House_18" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, 10.6733)
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, 5.26017)
 
 [node name="House_19" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, 23.2909)
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, 21.218)
 
 [node name="House_20" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, 35.7562)
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 42.1136, 0.220147, 37.2809)
+
+[node name="House_18" parent="Houses" instance=ExtResource("1_ubxa0")]
+transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 16.7231, 0.220147, -41.83)
 
 [node name="House_21" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 15.7324, 0.220147, -41.83)
+transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 16.7231, 0.220147, -25.448)
 
 [node name="House_22" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 15.7324, 0.220147, -29.0231)
+transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 16.7231, 0.220147, -9.74884)
 
 [node name="House_23" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 15.7324, 0.220147, -16.4055)
+transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 16.7231, 0.220147, 5.26017)
 
 [node name="House_24" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 15.7324, 0.220147, -2.13363)
+transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 16.7231, 0.220147, 21.218)
 
 [node name="House_25" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 15.7324, 0.220147, 10.6733)
+transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 16.7231, 0.220147, 37.2809)
 
-[node name="House_26" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 15.7324, 0.220147, 23.2909)
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.673594, 0)
+curve = SubResource("Curve3D_3yyee")
 
-[node name="House_27" parent="Houses" instance=ExtResource("1_ubxa0")]
-transform = Transform3D(8.34742e-09, 0, -0.7, 0, 0.7, 0, 0.7, 0, 8.34742e-09, 15.7324, 0.220147, 35.7562)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.9998, 0, -0.0199959, 0, 1, 0, 0.0199959, 0, -0.9998, -30.6276, 0, -40.1321)

@@ -74,17 +74,17 @@ _data = {
 [node name="House_2" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 4.99427, 0)
+transform = Transform3D(14.7683, 0, 0, 0, 10, 0, 0, 0, 10, 0, 4.99427, 0)
 material_override = SubResource("StandardMaterial3D_hua48")
 use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(12, 0, 0, 0, 0.1, 0, 0, 0, 12, 0, 0, 0)
+transform = Transform3D(17.7219, 0, 0, 0, 0.1, 0, 0, 0, 12, 0, 0, 0)
 material_override = ExtResource("1_p0g4j")
 use_collision = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(12, 0, 0, 0, 5, 0, 0, 0, 12, 0, 11.7269, 0)
+transform = Transform3D(17.7219, 0, 0, 0, 5, 0, 0, 0, 12, 0, 11.7269, 0)
 material_override = SubResource("StandardMaterial3D_hg2hj")
 mesh = SubResource("PrismMesh_ckj2m")
 

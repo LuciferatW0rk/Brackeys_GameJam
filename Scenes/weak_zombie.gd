@@ -3,6 +3,7 @@ extends CharacterBody3D
 var player = null
 var is_attacking = false  # Track if the zombie is currently attacking
 var attack_animation_duration = 0.0  # Duration of the attack animation
+var stand_up_done = false  # Track if the stand-up animation is finished
 
 const SPEED = 4.0
 const ATTACK_RANGE = 1.5
@@ -17,8 +18,16 @@ func _ready():
 	# Get the duration of the attack animation
 	attack_animation_duration = anim_player.get_animation("zombie_attacking").length
 	
+	# Play the stand-up animation when the zombie spawns
+	anim_player.play("standup")
+	_start_stand_up_wait()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not stand_up_done:
+		# Wait for the stand-up animation to complete before allowing movement
+		return
+	
 	velocity = Vector3.ZERO
 	
 	if _target_in_range():
@@ -44,7 +53,7 @@ func _process(delta):
 			rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10.0)
 	
 	move_and_slide()
-	
+
 # Function to check if the player is within attack range
 func _target_in_range() -> bool:
 	return global_transform.origin.distance_to(player.global_transform.origin) < ATTACK_RANGE
@@ -56,3 +65,12 @@ func _start_animation_wait() -> void:
 	# Stop attacking and switch to running animation
 	anim_player.play("running_zombie")
 	is_attacking = false
+
+# Coroutine to wait for the stand-up animation to finish before following the player
+func _start_stand_up_wait() -> void:
+	var stand_up_duration = anim_player.get_animation("standup").length
+	# Wait until the stand-up animation is done
+	await get_tree().create_timer(stand_up_duration).timeout
+	stand_up_done = true
+	# Switch to running zombie animation after standing up
+	anim_player.play("running_zombie")

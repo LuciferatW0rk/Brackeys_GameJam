@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bi255v0w8uwda"
+path.s3tc="res://.godot/imported/ladyroam_2_Ch37_1001_Normal.png-aa093b6f95b1af67449d4648219c31f4.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "0176c220cff02319532cf46a14546dad"
+}
+
+[deps]
+
+source_file="res://Assets/ladyroam_2_Ch37_1001_Normal.png"
+dest_files=["res://.godot/imported/ladyroam_2_Ch37_1001_Normal.png-aa093b6f95b1af67449d4648219c31f4.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Assets/ladyroam_2_Ch37_1001_Normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,10 +1,12 @@
 extends CharacterBody3D
 
 var speed
+var player_health = 100
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
+const HIT_STAGGER = 6.0
 
 # Bob variables
 const BOB_FREQ = 1.0
@@ -19,12 +21,17 @@ var gravity = 9.8
 var bullet_glock = load("res://bullet_glock.tscn")
 var instance 
 
+
+@onready var healthbar = $Head/Camera3D/Sprite3D/SubViewport/ProgressBar
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var glock_anim = $Head/Camera3D/Glock/AnimationPlayer
 @onready var glock_barrel = $Head/Camera3D/Glock/RayCast3D
+@onready var deathscreen = $Head/Camera3D/Sprite3D/SubViewport/Label
+
 
 func _ready():
+	healthbar.max_value = player_health
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
@@ -34,6 +41,7 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
 func _physics_process(delta):
+	
 	# Add gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -87,6 +95,16 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP 
 	return pos
 
-func hit():
-	print("player hit")
-	emit_signal("player_hit")
+func hit(dir):
+	if player_health > 0:
+		velocity += dir * HIT_STAGGER
+		healthbar.value -= 10
+		player_health -= 10
+		print("player hit")
+		print("health = " , player_health)
+		emit_signal("player_hit")
+	else:
+		deathscreen.visible = true
+		#get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		queue_free()

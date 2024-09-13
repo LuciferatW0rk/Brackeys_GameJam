@@ -11,7 +11,7 @@ const SPEED = 4.0
 const ATTACK_RANGE = 1.5
 
 
-
+@onready var healthbar = $Sprite3D/SubViewport/ProgressBar
 
 @export var player_path : NodePath
 @onready var nav_agent = $NavigationAgent3D
@@ -43,7 +43,6 @@ func _process(delta):
 				# Start the attack animation
 				anim_player.play("zombie_attacking")
 				is_attacking = true
-				player.hit()
 			# Keep looking at the player while attacking
 			look_at(Vector3(player.global_transform.origin.x, global_transform.origin.y, player.global_transform.origin.z), Vector3.UP)
 		else:
@@ -87,11 +86,14 @@ func _start_stand_up_wait() -> void:
 		anim_player.play("running_zombie")
 
 func _hit_finished():
-	print("hit finished")
-	player.hit()
+	if global_transform.origin.distance_to(player.global_transform.origin) < ATTACK_RANGE + 1:
+		var dir = (player.global_transform.origin - global_transform.origin).normalized()  # Get direction as a Vector3
+		print("hit finished")
+		player.hit(dir)
 
 func hit():
 	if health >0:
+		healthbar.value -= 1
 		health -= 1
 		print(health)
 		if health <= 0:
@@ -106,4 +108,3 @@ func _start_death_wait() -> void:
 	# Wait until the death animation is done
 	await get_tree().create_timer(death_animation_duration).timeout
 	queue_free()  # Remove the zombie after the animation
-

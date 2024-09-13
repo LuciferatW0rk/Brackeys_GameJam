@@ -1,5 +1,7 @@
 extends RayCast3D
 
+
+@onready var blood = $"../Blood/GPUParticles3D"
 var can_hit = true 
 var hit_cooldown = 0.1
 func _process(delta):
@@ -9,7 +11,8 @@ func _process(delta):
 		
 		var parentObj = hitObj.get_parent()
 		if hitObj.is_in_group("enemy"):
-			print("hit ", hitObj.name)
+			blood.emitting = true
+			print("hit ", hitObj.name)#debug purpose
 			hitObj.hit()
 		#if parentObj != null :
 			#print("Interacted with", parentObj)

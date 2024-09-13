@@ -17,6 +17,7 @@ const ATTACK_RANGE = 1.5
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_player = $weak_zombie/AnimationPlayer
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_node(player_path)
@@ -35,28 +36,30 @@ func _process(delta):
 		return
 	
 	velocity = Vector3.ZERO
-	
-	if _target_in_range() :
-		# Attack player if in range
-		if not is_attacking:
-			# Start the attack animation
-			anim_player.play("zombie_attacking")
-			is_attacking = true
-		# Keep looking at the player while attacking
-		look_at(Vector3(player.global_transform.origin.x, global_transform.origin.y, player.global_transform.origin.z), Vector3.UP)
-	else:
-		# If player is not in range, switch to running animation only if attack animation is done
-		if is_attacking:
-			# Start a coroutine to wait for the attack animation to finish
-			_start_animation_wait()
+	if health > 0:
+		if _target_in_range() :
+			# Attack player if in range
+			if not is_attacking :
+				# Start the attack animation
+				anim_player.play("zombie_attacking")
+				is_attacking = true
+				player.hit()
+			# Keep looking at the player while attacking
+			look_at(Vector3(player.global_transform.origin.x, global_transform.origin.y, player.global_transform.origin.z), Vector3.UP)
 		else:
-			# Move towards the player
-			nav_agent.set_target_position(player.global_transform.origin)
-			var next_nav_point = nav_agent.get_next_path_position()
-			velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
-			
-			# Rotate towards the player while running
-			rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10.0)
+			# If player is not in range, switch to running animation only if attack animation is done
+			if is_attacking:
+				# Start a coroutine to wait for the attack animation to finish
+				_start_animation_wait()
+			else:
+				# Move towards the player
+				nav_agent.set_target_position(player.global_transform.origin)
+				var next_nav_point = nav_agent.get_next_path_position()
+				velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
+				
+				# Rotate towards the player while running
+				rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10.0)
+		
 	if health >0:
 		move_and_slide()
 
@@ -67,9 +70,10 @@ func _target_in_range() -> bool:
 # Coroutine to wait for the attack animation to finish
 func _start_animation_wait() -> void:
 	# Wait until the attack animation is done
-	await get_tree().create_timer(attack_animation_duration).timeout
+	await get_tree().create_timer(attack_animation_duration/2).timeout
 	# Stop attacking and switch to running animation
-	anim_player.play("running_zombie")
+	if health >0 :
+		anim_player.play("running_zombie")
 	is_attacking = false
 
 # Coroutine to wait for the stand-up animation to finish before following the player
@@ -79,7 +83,8 @@ func _start_stand_up_wait() -> void:
 	await get_tree().create_timer(stand_up_duration).timeout
 	stand_up_done = true
 	# Switch to running zombie animation after standing up
-	anim_player.play("running_zombie")
+	if health >0 :
+		anim_player.play("running_zombie")
 
 func _hit_finished():
 	print("hit finished")

@@ -11,6 +11,9 @@ const BOB_FREQ = 1.0
 const BOB_AMP = 0.1
 var t_bob = 0.0
 
+#signal
+signal player_hit
+
 var gravity = 9.8
 
 var bullet_glock = load("res://bullet_glock.tscn")
@@ -83,3 +86,7 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP 
 	return pos
+
+func hit():
+	print("player hit")
+	emit_signal("player_hit")

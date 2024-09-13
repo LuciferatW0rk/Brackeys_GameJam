@@ -4,9 +4,14 @@ var player = null
 var is_attacking = false  # Track if the zombie is currently attacking
 var attack_animation_duration = 0.0  # Duration of the attack animation
 var stand_up_done = false  # Track if the stand-up animation is finished
+var health = 10
+
 
 const SPEED = 4.0
 const ATTACK_RANGE = 1.5
+
+
+
 
 @export var player_path : NodePath
 @onready var nav_agent = $NavigationAgent3D
@@ -25,12 +30,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not stand_up_done:
+		health = 10
 		# Wait for the stand-up animation to complete before allowing movement
 		return
 	
 	velocity = Vector3.ZERO
 	
-	if _target_in_range():
+	if _target_in_range() :
 		# Attack player if in range
 		if not is_attacking:
 			# Start the attack animation
@@ -51,8 +57,8 @@ func _process(delta):
 			
 			# Rotate towards the player while running
 			rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10.0)
-	
-	move_and_slide()
+	if health >0:
+		move_and_slide()
 
 # Function to check if the player is within attack range
 func _target_in_range() -> bool:
@@ -74,3 +80,25 @@ func _start_stand_up_wait() -> void:
 	stand_up_done = true
 	# Switch to running zombie animation after standing up
 	anim_player.play("running_zombie")
+
+func _hit_finished():
+	print("hit finished")
+	player.hit()
+
+func hit():
+	if health >0:
+		health -= 1
+		print(health)
+		if health <= 0:
+			anim_player.play("zombie_dying")  # Play the death animation 
+			_start_death_wait()  # Wait for the animation to finish before queue_free()
+
+
+
+# Coroutine to wait for the death animation to finish
+func _start_death_wait() -> void:
+	var death_animation_duration = anim_player.get_animation("zombie_dying").length
+	# Wait until the death animation is done
+	await get_tree().create_timer(death_animation_duration).timeout
+	queue_free()  # Remove the zombie after the animation
+

@@ -20,7 +20,7 @@ var gravity = 9.8
 
 var bullet_glock = load("res://bullet_glock.tscn")
 var instance 
-
+var can_shoot = true 
 
 @onready var healthbar = $Head/Camera3D/Sprite3D/SubViewport/ProgressBar
 @onready var head = $Head
@@ -29,6 +29,7 @@ var instance
 @onready var glock_barrel = $Head/Camera3D/Glock/RayCast3D
 @onready var label_death = $Head/Camera3D/Sprite3D/SubViewport/Label
 @onready var label_2 = $Head/Camera3D/Sprite3D/SubViewport/Label2
+@onready var shot = $shot
 
 
 func _ready():
@@ -80,17 +81,32 @@ func _physics_process(delta):
 	camera.transform.origin = _headbob(t_bob) * 0.5
 	
 	#shooting
-	if Input.is_action_just_pressed("shoot"):
-		if !glock_anim.is_playing():
-			glock_anim.play("shoot")
-			instance = bullet_glock.instantiate()
-			instance.position = glock_barrel.global_position
-			instance.transform.basis = glock_barrel.global_transform.basis
-			get_parent().add_child(instance)
-	
+	if Input.is_action_just_pressed("shoot") and can_shoot:
+		# Start shooting if the player is allowed to shoot
+		fire_gun()
 	move_and_slide()
-	
-	
+
+func fire_gun():
+	if !glock_anim.is_playing():
+		shot.play()  # Play the shooting sound
+		glock_anim.play("shoot")  # Play the shooting animation
+		
+		# Create the bullet instance and set its position and rotation
+		var instance = bullet_glock.instantiate()
+		instance.position = glock_barrel.global_position
+		instance.transform.basis = glock_barrel.global_transform.basis
+		get_parent().add_child(instance)
+		
+		# Disable shooting until the cooldown period is over
+		can_shoot = false
+		
+		# Start the cooldown timer for shooting
+		await get_tree().create_timer(0.5).timeout  # 1-second delay (change if needed)
+		
+		# Re-enable shooting after the cooldown period
+		can_shoot = true
+
+
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP

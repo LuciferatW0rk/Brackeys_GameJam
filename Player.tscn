@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjfjgha7hpy5"]
+[gd_scene load_steps=10 format=3 uid="uid://bjfjgha7hpy5"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_h0fgd"]
 [ext_resource type="PackedScene" uid="uid://blf0eknkwxf4i" path="res://Glock.tscn" id="3_trpws"]
+[ext_resource type="AudioStream" uid="uid://cjy12usstqa7m" path="res://sound/9mm-pistol-shot-6349.mp3" id="4_dsj51"]
 [ext_resource type="Script" path="res://RayCast3D.gd" id="19_3dnoa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_24rwl"]
@@ -12,6 +13,7 @@
 viewport_path = NodePath("Head/Camera3D/Sprite3D/SubViewport")
 
 [sub_resource type="SystemFont" id="SystemFont_0nafo"]
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anst6"]
 
@@ -102,3 +104,8 @@ text = "Day 1
 "
 horizontal_alignment = 2
 autowrap_mode = 2
+
+[node name="shot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dsj51")
+volume_db = -0.135
+bus = &"SFX"

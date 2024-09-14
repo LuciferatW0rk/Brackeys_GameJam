@@ -63,7 +63,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435488, 0, 0.408005)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -75,7 +74,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435488, 0, 0.302976)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave2"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave2"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -87,7 +85,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435488, 0, 0.198952)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave3"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave3"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -99,7 +96,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435488, 0, 0.0951841)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave4"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave4"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -111,7 +107,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435488, 0, -0.0103305)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave5"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave5"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -123,7 +118,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435488, 0, -0.113598)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave6"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave6"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -135,7 +129,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435488, 0, -0.230827)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave7"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave7"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -147,7 +140,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435488, 0, -0.33125)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave8"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave8"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -159,7 +151,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435488, 0, -0.430325)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave9"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave9"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -171,7 +162,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190599, 0, 0.408005)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave10"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave10"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -183,7 +173,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190599, 0, 0.302976)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave11"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave11"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -195,7 +184,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190599, 0, 0.198952)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave12"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave12"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -207,7 +195,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190599, 0, 0.0951841)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave13"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave13"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -219,7 +206,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190599, 0, -0.0103305)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave14"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave14"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -231,7 +217,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190599, 0, -0.113598)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave15"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave15"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -243,7 +228,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190599, 0, -0.230827)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave16"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave16"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -255,7 +239,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190599, 0, -0.33125)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave17"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave17"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
@@ -267,223 +250,204 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190599, 0, -0.430325)
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave18"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave18"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave19" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0878709, 0, 0.408005)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104233, 0, 0.408005)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave19"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave19"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave20" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0878709, 0, 0.302976)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104233, 0, 0.302976)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave20"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave20"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave21" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0878709, 0, 0.198952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104233, 0, 0.198952)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave21"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave21"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave22" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0878709, 0, 0.0951841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104233, 0, 0.0951841)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave22"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave22"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave23" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0878709, 0, -0.0103305)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104233, 0, -0.0103305)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave23"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave23"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave24" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0878709, 0, -0.113598)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104233, 0, -0.113598)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave24"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave24"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave25" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0878709, 0, -0.230827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104233, 0, -0.230827)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave25"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave25"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave26" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0878709, 0, -0.33125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104233, 0, -0.33125)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave26"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave26"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave27" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0878709, 0, -0.430325)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104233, 0, -0.430325)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave27"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave27"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave28" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39241, 0, 0.408005)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349122, 0, 0.408005)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave28"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave28"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave29" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39241, 0, 0.302976)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349122, 0, 0.302976)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave29"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave29"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave30" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39241, 0, 0.198952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349122, 0, 0.198952)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave30"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave30"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave31" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39241, 0, 0.0951841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349122, 0, 0.0951841)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave31"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave31"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave32" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39241, 0, -0.0103305)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349122, 0, -0.0103305)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave32"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave32"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave33" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39241, 0, -0.113598)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349122, 0, -0.113598)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave33"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave33"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave34" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39241, 0, -0.230827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349122, 0, -0.230827)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave34"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave34"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave35" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39241, 0, -0.33125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349122, 0, -0.33125)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave35"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave35"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)
 material_override = SubResource("StandardMaterial3D_puxeg")
 
 [node name="Grave36" type="Node3D" parent="MeshInstance3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39241, 0, -0.430325)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349122, 0, -0.430325)
 
 [node name="Grave_part" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave36"]
 transform = Transform3D(-2.18557e-09, -0.01, 0, 10, -8.74228e-08, 0, 0, 0, 0.05, -0.0271994, 4.2533, -0.00138277)
 material_override = SubResource("StandardMaterial3D_04dm4")
-use_collision = true
 
 [node name="Grave2" type="CSGBox3D" parent="MeshInstance3D/Node3D/Grave36"]
 transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.05, 0.0297757, 0.764449, -0.00138277)

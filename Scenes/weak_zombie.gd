@@ -9,15 +9,16 @@ var health = 10
 const SPEED = 4.0
 const ATTACK_RANGE = 1.5
 
-@onready var healthbar = $Sprite3D/SubViewport/ProgressBar
+@onready var healthbar = $weak_zombie/Sprite3D/SubViewport/ProgressBar
 
-@export var player_path : NodePath
+@export var player_path := "/root/World/CharacterBody3D"
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_player = $weak_zombie/AnimationPlayer
 @onready var attack_sound = $"attack sound"
 @onready var zombie_sound = $zombie_sound
 
 func _ready():
+	healthbar.max_value = 10
 	player = get_node(player_path)
 	# Get the duration of the attack animation
 	attack_animation_duration = anim_player.get_animation("zombie_attacking").length
@@ -86,13 +87,15 @@ func _hit_finished():
 		player.hit(dir)
 
 func hit():
-	if health > 0:
-		healthbar.value -= 1
-		health -= 1
+	if health > 0 :
+		healthbar.value -= 2
+		health -= 2
+		health = max(health, 0)
 		print(health)
-		if health <= 0:
+		if health == 0:
 			anim_player.play("zombie_dying")
 			_start_death_wait()
+
 
 func _start_death_wait() -> void:
 	var death_animation_duration = anim_player.get_animation("zombie_dying").length

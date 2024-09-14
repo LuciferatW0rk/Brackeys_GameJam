@@ -1,13 +1,43 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjfjgha7hpy5"]
+[gd_scene load_steps=14 format=3 uid="uid://bjfjgha7hpy5"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_h0fgd"]
-[ext_resource type="PackedScene" uid="uid://blf0eknkwxf4i" path="res://Glock.tscn" id="3_trpws"]
+[ext_resource type="Material" uid="uid://h8ifcs45muwo" path="res://Glock_material.tres" id="3_moac1"]
 [ext_resource type="AudioStream" uid="uid://cjy12usstqa7m" path="res://sound/9mm-pistol-shot-6349.mp3" id="4_dsj51"]
 [ext_resource type="Script" path="res://RayCast3D.gd" id="19_3dnoa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_24rwl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2nopa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnncm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_gndm5"]
+length = 0.1
+step = 0.01
+
+[sub_resource type="Animation" id="Animation_i84gi"]
+resource_name = "shoot"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.203, -0.193, -0.579), Vector3(0.203, -0.193, -0.479), Vector3(0.203, -0.193, -0.579)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pg5xk"]
+_data = {
+"RESET": SubResource("Animation_gndm5"),
+"shoot": SubResource("Animation_i84gi")
+}
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_0tqws"]
 viewport_path = NodePath("Head/Camera3D/Sprite3D/SubViewport")
@@ -17,8 +47,8 @@ subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anst6"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.187101, 0)
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.187101, 0)
 script = ExtResource("1_h0fgd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -40,8 +70,56 @@ near = 0.026
 transform = Transform3D(1, 0, 0, 0, -6.46062e-08, -1, 0, 1.47802, -4.37114e-08, 0, 0, 0.189009)
 script = ExtResource("19_3dnoa")
 
-[node name="Glock" parent="Head/Camera3D" instance=ExtResource("3_trpws")]
+[node name="Glock" type="Node3D" parent="Head/Camera3D"]
 transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0.202731, -0.192928, -0.578951)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Head/Camera3D/Glock"]
+transform = Transform3D(0.0990738, 0, 0.135785, 0, 0.2, 0, -0.0135785, 0, 0.990738, 0.000300169, 0.207, -2.0504e-05)
+material_override = ExtResource("3_moac1")
+cast_shadow = 0
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Head/Camera3D/Glock"]
+transform = Transform3D(0.0495369, 0, 0.00271569, 0, 0.1, 0, -0.00678924, 0, 0.0198148, 0.000300169, 0.0578471, -2.0504e-05)
+material_override = ExtResource("3_moac1")
+cast_shadow = 0
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Head/Camera3D/Glock"]
+transform = Transform3D(0.0495369, -0.00525007, 0.00250449, 0, 0.0922228, 0.00773293, -0.00678924, -0.0383066, 0.0182737, -0.0244403, 0.105077, -0.180536)
+material_override = ExtResource("3_moac1")
+cast_shadow = 0
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Head/Camera3D/Glock"]
+transform = Transform3D(0.0495369, 0, 0.00271569, 0, 0.1, 0, -0.00678924, 0, 0.0198148, -0.0616705, 0.285052, -0.452183)
+material_override = ExtResource("3_moac1")
+cast_shadow = 0
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Head/Camera3D/Glock"]
+transform = Transform3D(0.0495369, 0.0407354, -1.18707e-10, 0, -1.31134e-08, -0.02, -0.00678924, 0.297222, -8.66131e-10, -0.0188007, 0.017719, -0.139388)
+material_override = ExtResource("3_moac1")
+cast_shadow = 0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Head/Camera3D/Glock"]
+transform = Transform3D(0.0990738, -0.0226988, 0.0372715, 0, 0.109796, 0.417918, -0.0135785, -0.165619, 0.271947, -0.0543955, -0.0203493, -0.399101)
+material_override = ExtResource("3_moac1")
+cast_shadow = 0
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Head/Camera3D/Glock"]
+transform = Transform3D(0.0990738, 0.0135785, -5.93534e-10, 0, -4.37114e-09, -0.1, -0.0135785, 0.0990738, -4.33066e-09, 0.0564035, 0.242019, 0.409332)
+material_override = SubResource("StandardMaterial3D_hnncm")
+cast_shadow = 0
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Head/Camera3D/Glock"]
+transform = Transform3D(0.108981, 0.0135785, -6.52887e-10, 0, -4.37114e-09, -0.11, -0.0149363, 0.0990738, -4.76372e-09, 0.0562959, 0.242019, 0.408546)
+material_override = ExtResource("3_moac1")
+cast_shadow = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Camera3D/Glock"]
+libraries = {
+"": SubResource("AnimationLibrary_pg5xk")
+}
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D/Glock"]
+transform = Transform3D(-0.989321, -0.145755, 6.37116e-09, 0, -4.37114e-08, -1, 0.145755, -0.989321, 4.32446e-08, 0.0787814, 0.253831, 0.558611)
 
 [node name="Sprite3D" type="Sprite3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.301)
@@ -107,5 +185,5 @@ autowrap_mode = 2
 
 [node name="shot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dsj51")
-volume_db = -0.135
-bus = &"SFX"
+volume_db = -0.52
+bus = &"Gun"

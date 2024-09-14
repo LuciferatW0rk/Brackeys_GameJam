@@ -12,7 +12,7 @@ func _process(delta):
 		var parentObj = hitObj.get_parent()
 		if hitObj.is_in_group("enemy"):
 			blood.emitting = true
-			print("hit ", hitObj.name)#debug purpose
+			#print("hit ", hitObj.name)#debug purpose
 			hitObj.hit()
 		#if parentObj != null :
 			#print("Interacted with", parentObj)

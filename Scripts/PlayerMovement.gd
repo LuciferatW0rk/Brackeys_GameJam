@@ -129,4 +129,3 @@ func hit(dir):
 
 func _increment_day(day):
 	label_2.text = "Day "+ str(day)
-	print(day)

@@ -1,7 +1,7 @@
 extends Node3D
 
 var time : float
-@export var day_length : float = 100.0
+@export var day_length : float = 10.0
 @export var start_time : float = 0.3
 var time_rate : float
 var day = 1
@@ -11,6 +11,7 @@ var sun : DirectionalLight3D
 @export var sun_color : Gradient
 @export var sun_intensity : Curve 
 @onready var player = $"../CharacterBody3D"
+@onready var world = $".."
 
 #moon
 var moon : DirectionalLight3D
@@ -39,6 +40,7 @@ func _process(delta):
 		time = 0.0
 		day += 1
 		player._increment_day(day)
+		world._appocalypse(day)
 		
 		
 	

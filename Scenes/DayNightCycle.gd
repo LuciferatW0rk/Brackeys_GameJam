@@ -4,11 +4,13 @@ var time : float
 @export var day_length : float = 100.0
 @export var start_time : float = 0.3
 var time_rate : float
+var day = 1
 
 #sun
 var sun : DirectionalLight3D
 @export var sun_color : Gradient
 @export var sun_intensity : Curve 
+@onready var player = $"../CharacterBody3D"
 
 #moon
 var moon : DirectionalLight3D
@@ -35,6 +37,9 @@ func _process(delta):
 	
 	if time >= 1.0:
 		time = 0.0
+		day += 1
+		player._increment_day(day)
+		
 		
 	
 	#sun

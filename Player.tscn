@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjfjgha7hpy5"]
+[gd_scene load_steps=9 format=3 uid="uid://bjfjgha7hpy5"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_h0fgd"]
 [ext_resource type="PackedScene" uid="uid://blf0eknkwxf4i" path="res://Glock.tscn" id="3_trpws"]
@@ -10,6 +10,10 @@
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_0tqws"]
 viewport_path = NodePath("Head/Camera3D/Sprite3D/SubViewport")
+
+[sub_resource type="SystemFont" id="SystemFont_0nafo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anst6"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.187101, 0)
@@ -66,7 +70,6 @@ value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="Head/Camera3D/Sprite3D/SubViewport"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -79,3 +82,23 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "You Died !"
+
+[node name="Label2" type="Label" parent="Head/Camera3D/Sprite3D/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.465
+offset_top = -103.275
+offset_right = 173.179
+offset_bottom = -3.27499
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_0nafo")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxEmpty_anst6")
+text = "Day 1
+"
+horizontal_alignment = 2
+autowrap_mode = 2

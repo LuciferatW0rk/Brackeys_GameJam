@@ -27,10 +27,12 @@ var instance
 @onready var camera = $Head/Camera3D
 @onready var glock_anim = $Head/Camera3D/Glock/AnimationPlayer
 @onready var glock_barrel = $Head/Camera3D/Glock/RayCast3D
-@onready var deathscreen = $Head/Camera3D/Sprite3D/SubViewport/Label
+@onready var label_death = $Head/Camera3D/Sprite3D/SubViewport/Label
+@onready var label_2 = $Head/Camera3D/Sprite3D/SubViewport/Label2
 
 
 func _ready():
+	label_death.visible = false
 	healthbar.max_value = player_health
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -104,7 +106,11 @@ func hit(dir):
 		print("health = " , player_health)
 		emit_signal("player_hit")
 	else:
-		deathscreen.visible = true
+		label_death.visible = true
 		#get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		queue_free()
+		#queue_free()
+
+func _increment_day(day):
+	label_2.text = "Day "+ str(day)
+	print(day)

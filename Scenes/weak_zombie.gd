@@ -6,7 +6,7 @@ var attack_animation_duration = 0.0  # Duration of the attack animation
 var stand_up_done = false  # Track if the stand-up animation is finished
 var health = 10
 
-const SPEED = 4.0
+const SPEED = 6.0
 const ATTACK_RANGE = 1.5
 
 @onready var healthbar = $weak_zombie/Sprite3D/SubViewport/ProgressBar
@@ -21,7 +21,6 @@ func _ready():
 	healthbar.max_value = 10
 	player = get_node(player_path)
 	# Get the duration of the attack animation
-	attack_animation_duration = anim_player.get_animation("zombie_attacking").length
 	
 	# Play the stand-up animation when the zombie spawns
 	anim_player.play("standup")
@@ -66,7 +65,7 @@ func _target_in_range() -> bool:
 	return global_transform.origin.distance_to(player.global_transform.origin) < ATTACK_RANGE
 
 func _start_animation_wait() -> void:
-	await get_tree().create_timer(attack_animation_duration / 2).timeout
+	await get_tree().create_timer(0.5).timeout
 	if health > 0:
 		anim_player.play("running_zombie")
 		if not zombie_sound.is_playing():

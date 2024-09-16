@@ -3,7 +3,7 @@ extends CharacterBody3D
 var speed
 var player_health = 100
 const WALK_SPEED = 5.0
-const SPRINT_SPEED = 8.0
+const SPRINT_SPEED = 10.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 const HIT_STAGGER = 6.0
@@ -38,6 +38,10 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
+	
+	if Input.is_action_just_pressed("escape"):
+		_go_to_main_menu()
+	
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
@@ -84,7 +88,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot") and can_shoot:
 		# Start shooting if the player is allowed to shoot
 		fire_gun()
-	move_and_slide()
+	if player_health >0 :
+		move_and_slide()
 
 func fire_gun():
 	if !glock_anim.is_playing():
@@ -122,10 +127,16 @@ func hit(dir):
 		print("health = " , player_health)
 		emit_signal("player_hit")
 	else:
+		
 		label_death.visible = true
-		#get_tree().paused = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		can_shoot = false
+		_go_to_main_menu()
 		#queue_free()
 
 func _increment_day(day):
 	label_2.text = "Day "+ str(day)
+	label_death.text = "You Died!!    You Survived "+str(day) +"Days   Press Esc key to exit"
+	
+func _go_to_main_menu():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")

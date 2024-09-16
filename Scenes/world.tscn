@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cf7ygxdrgwmht" path="res://Scenes/forest.tscn" id="3_262go"]
 [ext_resource type="PackedScene" uid="uid://xyu2ksk2x66e" path="res://Assets/tree.tscn" id="4_pdt5l"]
 [ext_resource type="Script" path="res://Scenes/DayNightCycle.gd" id="5_od36m"]
-[ext_resource type="PackedScene" path="res://Scenes/city.tscn" id="8_k4tlp"]
+[ext_resource type="PackedScene" uid="uid://by045a3fhno5y" path="res://Scenes/city.tscn" id="8_k4tlp"]
 [ext_resource type="AudioStream" uid="uid://8xc45p33fll0" path="res://sound/cinematic-suspense-to-suspense-epic-173524.mp3" id="9_sotw1"]
 [ext_resource type="AudioStream" uid="uid://ci468gkxwsmch" path="res://sound/calm-and-peaceful-115481.mp3" id="12_fl7r4"]
 
